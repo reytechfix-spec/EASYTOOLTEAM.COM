@@ -20,7 +20,6 @@
             overflow-x: hidden;
         }
         
-        /* Animated Background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -47,7 +46,6 @@
             to { transform: rotate(360deg); }
         }
         
-        /* Navigation */
         .navbar {
             position: fixed;
             top: 0;
@@ -68,7 +66,6 @@
             align-items: center;
         }
         
-        /* Logo */
         .logo {
             display: flex;
             align-items: center;
@@ -128,12 +125,6 @@
             font-weight: 600;
         }
         
-        .nav-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
-        }
-        
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -155,7 +146,6 @@
             border-radius: 50px;
             font-size: 14px;
             margin-bottom: 30px;
-            backdrop-filter: blur(10px);
         }
         
         .hero h1 {
@@ -199,8 +189,6 @@
             color: white;
             font-weight: 600;
             transition: all 0.3s;
-            border: none;
-            cursor: pointer;
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -226,48 +214,6 @@
             gap: 10px;
         }
         
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-3px);
-        }
-        
-        /* Stats */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto 80px;
-            padding: 0 20px;
-        }
-        
-        .stat-card {
-            text-align: center;
-            padding: 30px;
-            background: rgba(30, 41, 59, 0.5);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s;
-        }
-        
-        .stat-card:hover {
-            transform: translateY(-10px);
-            border-color: #10b981;
-        }
-        
-        .stat-number {
-            font-size: 48px;
-            font-weight: 800;
-            color: #10b981;
-        }
-        
-        .stat-label {
-            color: #9ca3af;
-            margin-top: 10px;
-        }
-        
-        /* Features */
         .features {
             padding: 80px 20px;
             max-width: 1400px;
@@ -306,7 +252,6 @@
         .feature-card:hover {
             transform: translateY(-5px);
             border-color: #10b981;
-            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.1);
         }
         
         .feature-icon {
@@ -326,11 +271,6 @@
             margin-bottom: 15px;
         }
         
-        .feature-card p {
-            color: #9ca3af;
-            line-height: 1.6;
-        }
-        
         .feature-list {
             margin-top: 20px;
             list-style: none;
@@ -345,10 +285,8 @@
         
         .feature-list li i {
             color: #10b981;
-            font-size: 14px;
         }
         
-        /* Pricing */
         .pricing {
             padding: 80px 20px;
             background: rgba(16, 185, 129, 0.05);
@@ -407,20 +345,6 @@
             color: #9ca3af;
         }
         
-        .pricing-features {
-            list-style: none;
-            margin: 30px 0;
-        }
-        
-        .pricing-features li {
-            padding: 10px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        
-        /* Download Section */
         .download-section {
             padding: 80px 20px;
             text-align: center;
@@ -451,7 +375,6 @@
         .download-btn:hover {
             transform: translateY(-5px);
             border-color: #10b981;
-            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
         }
         
         .download-icon {
@@ -462,11 +385,6 @@
             font-size: 18px;
             margin-bottom: 5px;
             color: #10b981;
-        }
-        
-        .download-text p {
-            font-size: 12px;
-            opacity: 0.8;
         }
         
         .download-info {
@@ -488,7 +406,6 @@
             color: #9ca3af;
         }
         
-        /* Footer */
         .footer {
             background: #0a0a0a;
             padding: 60px 20px 30px;
@@ -514,15 +431,6 @@
             line-height: 1.6;
         }
         
-        .footer-section a {
-            color: #9ca3af;
-            text-decoration: none;
-        }
-        
-        .footer-section a:hover {
-            color: #10b981;
-        }
-        
         .social-links {
             display: flex;
             gap: 15px;
@@ -542,7 +450,6 @@
         
         .social-links a:hover {
             background: #10b981;
-            transform: translateY(-3px);
         }
         
         .creator {
@@ -553,7 +460,6 @@
             color: #10b981;
         }
         
-        /* Scroll to top */
         .scroll-top {
             position: fixed;
             bottom: 30px;
@@ -577,11 +483,117 @@
             visibility: visible;
         }
         
-        .scroll-top:hover {
-            transform: translateY(-5px);
+        /* Admin Panel Styles */
+        .admin-panel {
+            display: none;
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 30px;
         }
         
-        /* Responsive */
+        .admin-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #334155;
+        }
+        
+        .admin-tab {
+            background: none;
+            border: none;
+            color: #9ca3af;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .admin-tab.active {
+            color: #10b981;
+            border-bottom: 2px solid #10b981;
+        }
+        
+        .users-table {
+            width: 100%;
+            overflow-x: auto;
+        }
+        
+        .users-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .users-table th, .users-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #334155;
+        }
+        
+        .users-table th {
+            color: #10b981;
+            font-weight: 600;
+        }
+        
+        .approve-btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        
+        .reject-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .activate-btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .deactivate-btn {
+            background: #f59e0b;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        .status-active {
+            background: #10b981;
+            color: white;
+        }
+        
+        .status-pending {
+            background: #f59e0b;
+            color: #0a0a0a;
+        }
+        
+        .status-inactive {
+            background: #ef4444;
+            color: white;
+        }
+        
         @media (max-width: 768px) {
             .navbar {
                 padding: 15px 20px;
@@ -598,33 +610,12 @@
             .pricing-card.popular {
                 transform: scale(1);
             }
-            .download-btn {
-                min-width: 250px;
-                padding: 15px 25px;
-            }
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .feature-card, .pricing-card, .stat-card {
-            animation: fadeInUp 0.6s ease forwards;
         }
     </style>
 </head>
 <body>
     <div class="bg-animation"></div>
     
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
@@ -643,11 +634,12 @@
                 <a href="#download">Download</a>
                 <a href="#contact">Contact</a>
                 <a href="#" class="nav-btn" onclick="showLoginModal()">Login</a>
+                <span id="userInfo" style="color:#10b981;"></span>
+                <button onclick="logout()" id="logoutBtn" style="display:none; background:#ef4444; border:none; padding:8px 15px; border-radius:8px; color:white; cursor:pointer;">Logout</button>
             </div>
         </div>
     </nav>
     
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-badge">
@@ -665,27 +657,6 @@
         </div>
     </section>
     
-    <!-- Stats Section -->
-    <div class="stats">
-        <div class="stat-card">
-            <div class="stat-number">50K+</div>
-            <div class="stat-label">Devices Unlocked</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">98%</div>
-            <div class="stat-label">Success Rate</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">24/7</div>
-            <div class="stat-label">Support Available</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">6+</div>
-            <div class="stat-label">Bypass Methods</div>
-        </div>
-    </div>
-    
-    <!-- Features Section -->
     <section id="features" class="features">
         <h2 class="section-title">Powerful <span>Features</span></h2>
         <div class="features-grid">
@@ -731,14 +702,13 @@
         </div>
     </section>
     
-    <!-- Pricing Section -->
     <section id="pricing" class="pricing">
         <h2 class="section-title">Simple <span>Pricing</span></h2>
         <div class="pricing-grid">
             <div class="pricing-card">
                 <h3>Basic</h3>
                 <div class="price">$20<span>/3 Months</span></div>
-                <ul class="pricing-features">
+                <ul style="list-style: none; margin: 30px 0;">
                     <li><i class="fas fa-check" style="color:#10b981;"></i> Samsung MDM Bypass</li>
                     <li><i class="fas fa-check" style="color:#10b981;"></i> Basic Support</li>
                     <li><i class="fas fa-check" style="color:#10b981;"></i> 3 Months License</li>
@@ -750,7 +720,7 @@
                 <div class="popular-badge">Most Popular</div>
                 <h3>Professional</h3>
                 <div class="price">$30<span>/6 Months</span></div>
-                <ul class="pricing-features">
+                <ul style="list-style: none; margin: 30px 0;">
                     <li><i class="fas fa-check" style="color:#10b981;"></i> All Features</li>
                     <li><i class="fas fa-check" style="color:#10b981;"></i> Priority Support</li>
                     <li><i class="fas fa-check" style="color:#10b981;"></i> 6 Months License</li>
@@ -762,7 +732,7 @@
             <div class="pricing-card">
                 <h3>Enterprise</h3>
                 <div class="price">$40<span>/12 Months</span></div>
-                <ul class="pricing-features">
+                <ul style="list-style: none; margin: 30px 0;">
                     <li><i class="fas fa-check" style="color:#10b981;"></i> All Features</li>
                     <li><i class="fas fa-check" style="color:#10b981;"></i> 24/7 Priority Support</li>
                     <li><i class="fas fa-check" style="color:#10b981;"></i> 12 Months License</li>
@@ -775,27 +745,19 @@
         </div>
     </section>
     
-    <!-- Download Section -->
     <section id="download" class="download-section">
         <h2 class="section-title">Download <span>EASY TOOL</span></h2>
         <p style="color: #9ca3af; margin-bottom: 20px;">Choose your preferred download source</p>
         
         <div class="download-buttons">
-            <!-- Google Drive Button -->
-            <a href="https://drive.google.com/file/d/1eTr4KgGBL2XtExTucR0pZhMGMuSiYL22/view?usp=drive_link" 
-               class="download-btn" 
-               target="_blank">
+            <a href="https://drive.google.com/file/d/1eTr4KgGBL2XtExTucR0pZhMGMuSiYL22/view?usp=drive_link" class="download-btn" target="_blank">
                 <div class="download-icon"><i class="fab fa-google-drive"></i></div>
                 <div class="download-text">
                     <h4>Google Drive</h4>
                     <p>Version 0.02 | Fast Download</p>
                 </div>
             </a>
-            
-            <!-- MediaFire Button -->
-            <a href="https://www.mediafire.com/file/inikqfv4fd8m5k9/EASY_TOOL_Setup_v0.02.rar/file" 
-               class="download-btn" 
-               target="_blank">
+            <a href="https://www.mediafire.com/file/inikqfv4fd8m5k9/EASY_TOOL_Setup_v0.02.rar/file" class="download-btn" target="_blank">
                 <div class="download-icon"><i class="fas fa-cloud-download-alt"></i></div>
                 <div class="download-text">
                     <h4>MediaFire</h4>
@@ -814,15 +776,28 @@
                 <li>Launch EASY TOOL from desktop shortcut</li>
             </ol>
             <p style="color: #ef4444; margin-top: 15px; font-size: 12px;">
-                <i class="fas fa-shield-alt"></i> <strong>Note:</strong> Windows Defender may flag the tool - This is a false positive. Add to exceptions or disable temporarily.
+                <i class="fas fa-shield-alt"></i> <strong>Note:</strong> Windows Defender may flag the tool - This is a false positive.
             </p>
-            <p style="color: #10b981; margin-top: 10px; font-size: 12px;">
-                <i class="fas fa-key"></i> <strong>Password:</strong> easytool (if prompted)
-            </p>
+        </div>
+        
+        <!-- Admin Panel (Only visible to admin) -->
+        <div id="adminPanel" class="admin-panel">
+            <h3 style="color: #f59e0b; margin-bottom: 20px;">👑 Admin Dashboard</h3>
+            <div class="admin-tabs">
+                <button class="admin-tab active" onclick="switchAdminTab('pending')">Pending Approvals</button>
+                <button class="admin-tab" onclick="switchAdminTab('users')">All Users</button>
+            </div>
+            <div id="pendingUsersPanel" class="users-table">
+                <!-- Pending users will load here -->
+                <p>Loading pending users...</p>
+            </div>
+            <div id="allUsersPanel" class="users-table" style="display: none;">
+                <!-- All users will load here -->
+                <p>Loading users...</p>
+            </div>
         </div>
     </section>
     
-    <!-- Footer -->
     <footer class="footer" id="contact">
         <div class="footer-content">
             <div class="footer-section">
@@ -837,51 +812,67 @@
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
-                <p><a href="#home">Home</a></p>
-                <p><a href="#features">Features</a></p>
-                <p><a href="#pricing">Pricing</a></p>
-                <p><a href="#download">Download</a></p>
+                <p><a href="#home" style="color:#9ca3af;">Home</a></p>
+                <p><a href="#features" style="color:#9ca3af;">Features</a></p>
+                <p><a href="#pricing" style="color:#9ca3af;">Pricing</a></p>
+                <p><a href="#download" style="color:#9ca3af;">Download</a></p>
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
-                <p><i class="fas fa-phone"></i> <a href="tel:254111457171">254111457171</a></p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:reytechfix@gmail.com">reytechfix@gmail.com</a></p>
-                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/254111457171">254111457171</a></p>
+                <p><i class="fas fa-phone"></i> 254111457171</p>
+                <p><i class="fas fa-envelope"></i> reytechfix@gmail.com</p>
+                <p><i class="fab fa-whatsapp"></i> 254111457171</p>
             </div>
             <div class="footer-section">
                 <h4>Payment Methods</h4>
                 <p><i class="fas fa-money-bill-wave"></i> M-Pesa: 0111457171</p>
                 <p><i class="fas fa-globe"></i> SendWave: 0117219996</p>
-                <p><i class="fab fa-cc-visa"></i> Visa/MasterCard</p>
             </div>
         </div>
         <div class="creator">
-            <p>Created with <i class="fas fa-heart" style="color: #10b981;"></i> by <strong>REYTECHFX</strong> | © 2025 EASY TOOL | All Rights Reserved</p>
+            <p>Created with <i class="fas fa-heart" style="color: #10b981;"></i> by <strong>REYTECHFX</strong> | © 2025 EASY TOOL</p>
         </div>
     </footer>
     
-    <!-- Scroll to Top -->
     <div class="scroll-top" onclick="scrollToTop()">
         <i class="fas fa-arrow-up"></i>
     </div>
     
-    <!-- Login Modal -->
-    <div id="loginModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; justify-content: center; align-items: center;">
-        <div style="background: #1e293b; padding: 40px; border-radius: 20px; width: 400px; max-width: 90%;">
-            <h2 style="color: #10b981; margin-bottom: 20px; text-align: center;">Login to EASY TOOL</h2>
-            <input type="text" id="loginUsername" placeholder="Username" style="width: 100%; padding: 12px; margin: 10px 0; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: white;">
-            <input type="password" id="loginPassword" placeholder="Password" style="width: 100%; padding: 12px; margin: 10px 0; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: white;">
-            <button onclick="doLogin()" style="width: 100%; padding: 12px; background: #10b981; border: none; border-radius: 8px; color: white; font-weight: bold; cursor: pointer;">Login</button>
-            <button onclick="hideLoginModal()" style="width: 100%; padding: 12px; margin-top: 10px; background: #ef4444; border: none; border-radius: 8px; color: white; cursor: pointer;">Cancel</button>
-            <div id="loginError" style="color: #ef4444; margin-top: 10px; text-align: center;"></div>
-            <p style="text-align: center; margin-top: 15px; font-size: 12px; color: #9ca3af;">
-                <a href="#" onclick="showForgotPassword()" style="color: #10b981;">Forgot Password?</a>
-            </p>
+    <!-- Login/Register Modal -->
+    <div id="loginModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 2000; justify-content: center; align-items: center;">
+        <div style="background: #1e293b; padding: 40px; border-radius: 20px; width: 500px; max-width: 90%;">
+            <div style="display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 1px solid #334155;">
+                <button onclick="switchAuthTab('login')" id="loginTabBtn" style="background: none; border: none; color: #10b981; padding: 10px 20px; cursor: pointer; font-weight: bold; border-bottom: 2px solid #10b981;">Login</button>
+                <button onclick="switchAuthTab('register')" id="registerTabBtn" style="background: none; border: none; color: #9ca3af; padding: 10px 20px; cursor: pointer; font-weight: bold;">Register</button>
+            </div>
+            
+            <div id="loginForm">
+                <h2 style="color: #10b981; margin-bottom: 20px; text-align: center;">🔐 Login to EASY TOOL</h2>
+                <input type="text" id="loginUsername" placeholder="Username" style="width: 100%; padding: 12px; margin: 10px 0; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: white;">
+                <input type="password" id="loginPassword" placeholder="Password" style="width: 100%; padding: 12px; margin: 10px 0; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: white;">
+                <button onclick="doLogin()" style="width: 100%; padding: 12px; background: #10b981; border: none; border-radius: 8px; color: white; font-weight: bold; cursor: pointer;">Login</button>
+                <div id="loginError" style="color: #ef4444; margin-top: 10px; text-align: center;"></div>
+            </div>
+            
+            <div id="registerForm" style="display: none;">
+                <h2 style="color: #10b981; margin-bottom: 20px; text-align: center;">📝 Create Account</h2>
+                <input type="text" id="regUsername" placeholder="Username (min 3 chars)" style="width: 100%; padding: 12px; margin: 10px 0; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: white;">
+                <input type="password" id="regPassword" placeholder="Password (min 4 chars)" style="width: 100%; padding: 12px; margin: 10px 0; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: white;">
+                <input type="password" id="regConfirmPassword" placeholder="Confirm Password" style="width: 100%; padding: 12px; margin: 10px 0; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: white;">
+                <input type="email" id="regEmail" placeholder="Email Address" style="width: 100%; padding: 12px; margin: 10px 0; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: white;">
+                <button onclick="doRegister()" style="width: 100%; padding: 12px; background: #10b981; border: none; border-radius: 8px; color: white; font-weight: bold; cursor: pointer;">Register</button>
+                <div id="regError" style="color: #ef4444; margin-top: 10px; text-align: center;"></div>
+                <p style="text-align: center; margin-top: 15px; font-size: 11px; color: #9ca3af;">
+                    After registration, admin must approve your account before you can login.
+                </p>
+            </div>
+            
+            <button onclick="hideLoginModal()" style="width: 100%; padding: 12px; margin-top: 10px; background: #ef4444; border: none; border-radius: 8px; color: white; cursor: pointer;">Close</button>
         </div>
     </div>
     
     <!-- Payment Modal -->
-    <div id="paymentModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; justify-content: center; align-items: center;">
+    <div id="paymentModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 2000; justify-content: center; align-items: center;">
         <div style="background: #1e293b; padding: 40px; border-radius: 20px; width: 500px; max-width: 90%;">
             <h2 style="color: #f59e0b; margin-bottom: 20px;">💳 Payment Instructions</h2>
             <div id="paymentContent"></div>
@@ -889,31 +880,16 @@
         </div>
     </div>
     
-    <!-- Forgot Password Modal -->
-    <div id="forgotModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; justify-content: center; align-items: center;">
-        <div style="background: #1e293b; padding: 40px; border-radius: 20px; width: 450px; max-width: 90%;">
-            <h2 style="color: #10b981; margin-bottom: 20px;">🔐 Reset Password</h2>
-            <p style="color: #9ca3af; margin-bottom: 20px; font-size: 14px;">Enter your email address to receive reset instructions.</p>
-            <input type="email" id="resetEmail" placeholder="Your Email Address" style="width: 100%; padding: 12px; margin: 10px 0; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: white;">
-            <button onclick="sendResetLink()" style="width: 100%; padding: 12px; background: #10b981; border: none; border-radius: 8px; color: white; font-weight: bold; cursor: pointer;">Send Reset Link</button>
-            <button onclick="hideForgotModal()" style="width: 100%; padding: 12px; margin-top: 10px; background: #ef4444; border: none; border-radius: 8px; color: white; cursor: pointer;">Cancel</button>
-            <div id="resetMessage" style="color: #10b981; margin-top: 10px; text-align: center; font-size: 12px;"></div>
-        </div>
-    </div>
-    
     <script>
-        // Smooth scroll for navigation
+        // ==================== NAVIGATION ====================
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
         
-        // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             const scrollTop = document.querySelector('.scroll-top');
@@ -924,25 +900,79 @@
                 navbar.style.background = 'rgba(10, 10, 10, 0.95)';
                 navbar.style.padding = '20px 50px';
             }
-            if (window.scrollY > 300) {
-                scrollTop.classList.add('show');
-            } else {
-                scrollTop.classList.remove('show');
-            }
+            if (window.scrollY > 300) scrollTop.classList.add('show');
+            else scrollTop.classList.remove('show');
         });
         
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        
+        // ==================== AUTHENTICATION ====================
+        let currentUserRole = null;
+        
+        function switchAuthTab(tab) {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const loginBtn = document.getElementById('loginTabBtn');
+            const registerBtn = document.getElementById('registerTabBtn');
+            
+            if (tab === 'login') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+                loginBtn.style.color = '#10b981';
+                loginBtn.style.borderBottom = '2px solid #10b981';
+                registerBtn.style.color = '#9ca3af';
+                registerBtn.style.borderBottom = 'none';
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                registerBtn.style.color = '#10b981';
+                registerBtn.style.borderBottom = '2px solid #10b981';
+                loginBtn.style.color = '#9ca3af';
+                loginBtn.style.borderBottom = 'none';
+            }
         }
         
-        // Login functions
-        function showLoginModal() {
-            document.getElementById('loginModal').style.display = 'flex';
-        }
-        
-        function hideLoginModal() {
-            document.getElementById('loginModal').style.display = 'none';
-            document.getElementById('loginError').innerText = '';
+        async function doRegister() {
+            const username = document.getElementById('regUsername').value.trim();
+            const password = document.getElementById('regPassword').value;
+            const confirm = document.getElementById('regConfirmPassword').value;
+            const email = document.getElementById('regEmail').value.trim();
+            
+            if (!username || username.length < 3) {
+                document.getElementById('regError').innerText = 'Username must be at least 3 characters';
+                return;
+            }
+            if (!password || password.length < 4) {
+                document.getElementById('regError').innerText = 'Password must be at least 4 characters';
+                return;
+            }
+            if (password !== confirm) {
+                document.getElementById('regError').innerText = 'Passwords do not match';
+                return;
+            }
+            if (!email || !email.includes('@')) {
+                document.getElementById('regError').innerText = 'Valid email is required';
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password, email })
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert(data.message);
+                    switchAuthTab('login');
+                    document.getElementById('loginUsername').value = username;
+                } else {
+                    document.getElementById('regError').innerText = data.error;
+                }
+            } catch (error) {
+                document.getElementById('regError').innerText = 'Registration failed. Try again.';
+            }
         }
         
         async function doLogin() {
@@ -954,110 +984,211 @@
                 return;
             }
             
-            // Demo login - In real implementation, this would call your API
-            if (username === 'REYTECHFX' && password === 'valentina241') {
-                alert('Login successful! Welcome ' + username);
-                hideLoginModal();
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert(data.message);
+                    currentUserRole = data.role;
+                    hideLoginModal();
+                    document.getElementById('userInfo').innerHTML = `<span style="color:#10b981;">👤 ${data.username}</span>`;
+                    document.getElementById('logoutBtn').style.display = 'inline-block';
+                    
+                    // Show admin panel if user is admin
+                    if (data.role === 'admin') {
+                        document.getElementById('adminPanel').style.display = 'block';
+                        loadPendingUsers();
+                        loadAllUsers();
+                    }
+                } else {
+                    document.getElementById('loginError').innerText = data.error;
+                }
+            } catch (error) {
+                document.getElementById('loginError').innerText = 'Login failed. Try again.';
+            }
+        }
+        
+        async function logout() {
+            await fetch('/api/logout', { method: 'POST' });
+            location.reload();
+        }
+        
+        async function checkSession() {
+            const response = await fetch('/api/check_session');
+            const data = await response.json();
+            if (data.logged_in) {
+                document.getElementById('userInfo').innerHTML = `<span style="color:#10b981;">👤 ${data.username}</span>`;
+                document.getElementById('logoutBtn').style.display = 'inline-block';
+                if (data.role === 'admin') {
+                    document.getElementById('adminPanel').style.display = 'block';
+                    loadPendingUsers();
+                    loadAllUsers();
+                }
+            }
+        }
+        
+        // ==================== ADMIN FUNCTIONS ====================
+        function switchAdminTab(tab) {
+            const pendingPanel = document.getElementById('pendingUsersPanel');
+            const allPanel = document.getElementById('allUsersPanel');
+            const tabs = document.querySelectorAll('.admin-tab');
+            
+            tabs.forEach(t => t.classList.remove('active'));
+            if (tab === 'pending') {
+                pendingPanel.style.display = 'block';
+                allPanel.style.display = 'none';
+                tabs[0].classList.add('active');
+                loadPendingUsers();
             } else {
-                document.getElementById('loginError').innerText = 'Invalid credentials. Contact 254111457171 for license.';
+                pendingPanel.style.display = 'none';
+                allPanel.style.display = 'block';
+                tabs[1].classList.add('active');
+                loadAllUsers();
             }
         }
         
-        // Forgot password
-        function showForgotPassword() {
-            hideLoginModal();
-            document.getElementById('forgotModal').style.display = 'flex';
-        }
-        
-        function hideForgotModal() {
-            document.getElementById('forgotModal').style.display = 'none';
-            document.getElementById('resetMessage').innerText = '';
-        }
-        
-        function sendResetLink() {
-            const email = document.getElementById('resetEmail').value;
-            if (!email) {
-                document.getElementById('resetMessage').innerText = 'Please enter your email address';
-                document.getElementById('resetMessage').style.color = '#ef4444';
-                return;
+        async function loadPendingUsers() {
+            try {
+                const response = await fetch('/api/admin/pending_users');
+                const data = await response.json();
+                
+                if (data.success && data.users.length > 0) {
+                    let html = '<table><thead><tr><th>Username</th><th>Email</th><th>Registered</th><th>Actions</th></tr></thead><tbody>';
+                    data.users.forEach(user => {
+                        html += `<tr>
+                            <td>${user.username}</td>
+                            <td>${user.email}</td>
+                            <td>${new Date(user.registered_at).toLocaleDateString()}</td>
+                            <td>
+                                <button class="approve-btn" onclick="approveUser('${user.username}')">✓ Approve</button>
+                                <button class="reject-btn" onclick="rejectUser('${user.username}')">✗ Reject</button>
+                            </td>
+                        </tr>`;
+                    });
+                    html += '</tbody></table>';
+                    document.getElementById('pendingUsersPanel').innerHTML = html;
+                } else {
+                    document.getElementById('pendingUsersPanel').innerHTML = '<p style="text-align:center; color:#9ca3af;">No pending approvals</p>';
+                }
+            } catch (error) {
+                document.getElementById('pendingUsersPanel').innerHTML = '<p style="color:#ef4444;">Error loading pending users</p>';
             }
-            document.getElementById('resetMessage').innerText = 'Reset link sent to ' + email + '. Check your inbox.';
-            document.getElementById('resetMessage').style.color = '#10b981';
-            setTimeout(() => hideForgotModal(), 3000);
         }
         
-        // Payment functions
+        async function loadAllUsers() {
+            try {
+                const response = await fetch('/api/admin/all_users');
+                const data = await response.json();
+                
+                if (data.success && data.users.length > 0) {
+                    let html = '<table><thead><tr><th>Username</th><th>Email</th><th>Role</th><th>Status</th><th>Actions</th></tr></thead><tbody>';
+                    data.users.forEach(user => {
+                        const statusClass = user.is_active ? 'status-active' : 'status-inactive';
+                        const statusText = user.is_active ? 'Active' : 'Inactive';
+                        html += `<tr>
+                            <td>${user.username}</td>
+                            <td>${user.email}</td>
+                            <td>${user.role}</td>
+                            <td><span class="status-badge ${statusClass}">${statusText}</span></td>
+                            <td>
+                                ${user.username !== 'REYTECHFX' ? 
+                                    (user.is_active ? 
+                                        `<button class="deactivate-btn" onclick="toggleUserStatus('${user.username}', 'deactivate')">🔴 Deactivate</button>` :
+                                        `<button class="activate-btn" onclick="toggleUserStatus('${user.username}', 'activate')">🟢 Activate</button>`
+                                    ) : 'Admin'
+                                }
+                            </td>
+                        </tr>`;
+                    });
+                    html += '</tbody></table>';
+                    document.getElementById('allUsersPanel').innerHTML = html;
+                } else {
+                    document.getElementById('allUsersPanel').innerHTML = '<p style="text-align:center; color:#9ca3af;">No users found</p>';
+                }
+            } catch (error) {
+                document.getElementById('allUsersPanel').innerHTML = '<p style="color:#ef4444;">Error loading users</p>';
+            }
+        }
+        
+        async function approveUser(username) {
+            if (confirm(`Approve user ${username}?`)) {
+                const response = await fetch('/api/admin/approve_user', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username })
+                });
+                const data = await response.json();
+                alert(data.message);
+                loadPendingUsers();
+                loadAllUsers();
+            }
+        }
+        
+        async function rejectUser(username) {
+            if (confirm(`Reject user ${username}?`)) {
+                const response = await fetch('/api/admin/reject_user', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username })
+                });
+                const data = await response.json();
+                alert(data.message);
+                loadPendingUsers();
+            }
+        }
+        
+        async function toggleUserStatus(username, action) {
+            const actionText = action === 'activate' ? 'activate' : 'deactivate';
+            if (confirm(`${actionText.charAt(0).toUpperCase() + actionText.slice(1)} user ${username}?`)) {
+                const response = await fetch('/api/admin/deactivate_user', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, action })
+                });
+                const data = await response.json();
+                alert(data.message);
+                loadAllUsers();
+            }
+        }
+        
+        // ==================== MODAL FUNCTIONS ====================
+        function showLoginModal() { document.getElementById('loginModal').style.display = 'flex'; }
+        function hideLoginModal() { document.getElementById('loginModal').style.display = 'none'; }
+        
         function showPayment(plan) {
             let content = '';
             if (plan === 'basic') {
-                content = `
-                    <h3>Basic Plan - $20 (3 Months)</h3>
-                    <p>Send payment via:</p>
-                    <ul style="margin: 20px 0;">
-                        <li><strong>M-Pesa:</strong> 0111457171</li>
-                        <li><strong>SendWave:</strong> 0117219996</li>
-                    </ul>
+                content = `<h3>Basic Plan - $20 (3 Months)</h3><p>Send payment via:</p>
+                    <ul><li><strong>M-Pesa:</strong> 0111457171</li><li><strong>SendWave:</strong> 0117219996</li></ul>
                     <p>After payment, send transaction ID to <strong>254111457171</strong> for activation.</p>
-                    <div style="background: #0f172a; padding: 10px; border-radius: 8px; margin-top: 15px;">
-                        <p>Reference: <strong>ET + Your Phone Number</strong></p>
-                    </div>
-                `;
+                    <div style="background:#0f172a;padding:10px;border-radius:8px;margin-top:15px;">
+                    <p>Reference: <strong>ET + Your Phone Number</strong></p></div>`;
             } else if (plan === 'pro') {
-                content = `
-                    <h3>Professional Plan - $30 (6 Months)</h3>
-                    <p>Send payment via:</p>
-                    <ul style="margin: 20px 0;">
-                        <li><strong>M-Pesa:</strong> 0111457171</li>
-                        <li><strong>SendWave:</strong> 0117219996</li>
-                    </ul>
+                content = `<h3>Professional Plan - $30 (6 Months)</h3><p>Send payment via:</p>
+                    <ul><li><strong>M-Pesa:</strong> 0111457171</li><li><strong>SendWave:</strong> 0117219996</li></ul>
                     <p>After payment, send transaction ID to <strong>254111457171</strong> for activation.</p>
-                    <div style="background: #0f172a; padding: 10px; border-radius: 8px; margin-top: 15px;">
-                        <p>Reference: <strong>ET + Your Phone Number</strong></p>
-                    </div>
-                `;
+                    <div style="background:#0f172a;padding:10px;border-radius:8px;margin-top:15px;">
+                    <p>Reference: <strong>ET + Your Phone Number</strong></p></div>`;
             } else {
-                content = `
-                    <h3>Enterprise Plan - $40 (12 Months)</h3>
-                    <p>Send payment via:</p>
-                    <ul style="margin: 20px 0;">
-                        <li><strong>M-Pesa:</strong> 0111457171</li>
-                        <li><strong>SendWave:</strong> 0117219996</li>
-                    </ul>
+                content = `<h3>Enterprise Plan - $40 (12 Months)</h3><p>Send payment via:</p>
+                    <ul><li><strong>M-Pesa:</strong> 0111457171</li><li><strong>SendWave:</strong> 0117219996</li></ul>
                     <p>After payment, send transaction ID to <strong>254111457171</strong> for activation.</p>
-                    <div style="background: #0f172a; padding: 10px; border-radius: 8px; margin-top: 15px;">
-                        <p>Reference: <strong>ET + Your Phone Number</strong></p>
-                    </div>
-                `;
+                    <div style="background:#0f172a;padding:10px;border-radius:8px;margin-top:15px;">
+                    <p>Reference: <strong>ET + Your Phone Number</strong></p></div>`;
             }
             document.getElementById('paymentContent').innerHTML = content;
             document.getElementById('paymentModal').style.display = 'flex';
         }
         
-        function hidePaymentModal() {
-            document.getElementById('paymentModal').style.display = 'none';
-        }
+        function hidePaymentModal() { document.getElementById('paymentModal').style.display = 'none'; }
         
-        // Animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-        
-        document.querySelectorAll('.feature-card, .pricing-card, .stat-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
-        });
+        // Check session on load
+        checkSession();
     </script>
 </body>
 </html>
