@@ -16,12 +16,10 @@ def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
 
 def load_users():
-    """Load users from file or create default admin"""
     if os.path.exists(USERS_FILE):
         try:
             with open(USERS_FILE, 'r') as f:
                 users = json.load(f)
-                # Ensure admin exists
                 if "REYTECHFX" not in users:
                     users["REYTECHFX"] = {
                         "password": hash_password("valentina241"),
@@ -34,8 +32,6 @@ def load_users():
                 return users
         except:
             pass
-    
-    # Default admin account
     return {
         "REYTECHFX": {
             "password": hash_password("valentina241"),
@@ -63,8 +59,6 @@ def save_pending(pending):
     with open(PENDING_FILE, 'w') as f:
         json.dump(pending, f, indent=4)
 
-# ==================== ROUTES ====================
-
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -79,10 +73,8 @@ def register():
         
         if not username or len(username) < 3:
             return jsonify({'success': False, 'error': 'Username must be at least 3 characters'})
-        
         if not password or len(password) < 4:
             return jsonify({'success': False, 'error': 'Password must be at least 4 characters'})
-        
         if not email or '@' not in email:
             return jsonify({'success': False, 'error': 'Valid email is required'})
         
@@ -91,13 +83,8 @@ def register():
         
         if username in users:
             return jsonify({'success': False, 'error': 'Username already exists'})
-        
         if username in pending:
             return jsonify({'success': False, 'error': 'Username already pending approval'})
-        
-        for user in users.values():
-            if user.get('email') == email:
-                return jsonify({'success': False, 'error': 'Email already registered'})
         
         pending[username] = {
             'password': hash_password(password),
@@ -107,7 +94,6 @@ def register():
         save_pending(pending)
         
         return jsonify({'success': True, 'message': 'Registration successful! Awaiting admin approval.'})
-    
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})
 
@@ -126,28 +112,19 @@ def login():
         
         if username in pending:
             return jsonify({'success': False, 'error': 'Account pending admin approval'})
-        
         if username not in users:
             return jsonify({'success': False, 'error': 'Invalid username or password'})
         
         user = users[username]
-        
         if user['password'] != hash_password(password):
             return jsonify({'success': False, 'error': 'Invalid username or password'})
-        
         if not user.get('is_active', True):
             return jsonify({'success': False, 'error': 'Account deactivated. Contact admin.'})
         
         session['username'] = username
         session['role'] = user.get('role', 'user')
         
-        return jsonify({
-            'success': True,
-            'message': f'Welcome {username}!',
-            'username': username,
-            'role': session['role']
-        })
-    
+        return jsonify({'success': True, 'message': f'Welcome {username}!', 'username': username, 'role': session['role']})
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})
 
@@ -159,47 +136,28 @@ def logout():
 @app.route('/api/check_session', methods=['GET'])
 def check_session():
     if 'username' in session:
-        return jsonify({
-            'logged_in': True,
-            'username': session['username'],
-            'role': session.get('role', 'user')
-        })
+        return jsonify({'logged_in': True, 'username': session['username'], 'role': session.get('role', 'user')})
     return jsonify({'logged_in': False})
-
-# ==================== ADMIN ROUTES ====================
 
 @app.route('/api/admin/pending_users', methods=['GET'])
 def get_pending_users():
     if 'username' not in session or session.get('role') != 'admin':
         return jsonify({'success': False, 'error': 'Unauthorized'})
-    
     pending = load_pending()
-    pending_list = []
-    for username, data in pending.items():
-        pending_list.append({
-            'username': username,
-            'email': data['email'],
-            'registered_at': data['registered_at']
-        })
-    
+    pending_list = [{'username': u, 'email': d['email'], 'registered_at': d['registered_at']} for u, d in pending.items()]
     return jsonify({'success': True, 'users': pending_list})
 
 @app.route('/api/admin/approve_user', methods=['POST'])
 def approve_user():
     if 'username' not in session or session.get('role') != 'admin':
         return jsonify({'success': False, 'error': 'Unauthorized'})
-    
     data = request.json
     username = data.get('username', '')
-    
     pending = load_pending()
     users = load_users()
-    
     if username not in pending:
         return jsonify({'success': False, 'error': 'User not found'})
-    
     user_data = pending[username]
-    
     users[username] = {
         'password': user_data['password'],
         'email': user_data['email'],
@@ -209,68 +167,45 @@ def approve_user():
         'approved_by': session['username'],
         'approved_at': datetime.now().isoformat()
     }
-    
     del pending[username]
-    
     save_users(users)
     save_pending(pending)
-    
     return jsonify({'success': True, 'message': f'User {username} approved!'})
 
 @app.route('/api/admin/reject_user', methods=['POST'])
 def reject_user():
     if 'username' not in session or session.get('role') != 'admin':
         return jsonify({'success': False, 'error': 'Unauthorized'})
-    
     data = request.json
     username = data.get('username', '')
-    
     pending = load_pending()
-    
     if username in pending:
         del pending[username]
         save_pending(pending)
-    
     return jsonify({'success': True, 'message': f'User {username} rejected!'})
 
 @app.route('/api/admin/all_users', methods=['GET'])
 def get_all_users():
     if 'username' not in session or session.get('role') != 'admin':
         return jsonify({'success': False, 'error': 'Unauthorized'})
-    
     users = load_users()
-    user_list = []
-    for username, data in users.items():
-        user_list.append({
-            'username': username,
-            'email': data['email'],
-            'role': data.get('role', 'user'),
-            'is_active': data.get('is_active', True),
-            'created_at': data.get('created_at', '')
-        })
-    
+    user_list = [{'username': u, 'email': d['email'], 'role': d.get('role', 'user'), 'is_active': d.get('is_active', True), 'created_at': d.get('created_at', '')} for u, d in users.items()]
     return jsonify({'success': True, 'users': user_list})
 
 @app.route('/api/admin/deactivate_user', methods=['POST'])
 def deactivate_user():
     if 'username' not in session or session.get('role') != 'admin':
         return jsonify({'success': False, 'error': 'Unauthorized'})
-    
     data = request.json
     username = data.get('username', '')
     action = data.get('action', 'deactivate')
-    
     if username == 'REYTECHFX':
         return jsonify({'success': False, 'error': 'Cannot modify admin'})
-    
     users = load_users()
-    
     if username not in users:
         return jsonify({'success': False, 'error': 'User not found'})
-    
     users[username]['is_active'] = (action == 'activate')
     save_users(users)
-    
     status = 'activated' if action == 'activate' else 'deactivated'
     return jsonify({'success': True, 'message': f'User {username} {status}!'})
 
