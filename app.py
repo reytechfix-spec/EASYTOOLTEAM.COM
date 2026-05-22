@@ -77,7 +77,6 @@ def register():
         password = data.get('password', '')
         email = data.get('email', '').strip()
         
-        # Validation
         if not username or len(username) < 3:
             return jsonify({'success': False, 'error': 'Username must be at least 3 characters'})
         
@@ -90,19 +89,16 @@ def register():
         users = load_users()
         pending = load_pending()
         
-        # Check if username exists
         if username in users:
             return jsonify({'success': False, 'error': 'Username already exists'})
         
         if username in pending:
             return jsonify({'success': False, 'error': 'Username already pending approval'})
         
-        # Check if email exists
         for user in users.values():
             if user.get('email') == email:
                 return jsonify({'success': False, 'error': 'Email already registered'})
         
-        # Add to pending
         pending[username] = {
             'password': hash_password(password),
             'email': email,
@@ -128,25 +124,20 @@ def login():
         users = load_users()
         pending = load_pending()
         
-        # Check if user is pending
         if username in pending:
-            return jsonify({'success': False, 'error': 'Account pending admin approval. Please wait.'})
+            return jsonify({'success': False, 'error': 'Account pending admin approval'})
         
-        # Check if user exists
         if username not in users:
             return jsonify({'success': False, 'error': 'Invalid username or password'})
         
         user = users[username]
         
-        # Verify password
         if user['password'] != hash_password(password):
             return jsonify({'success': False, 'error': 'Invalid username or password'})
         
-        # Check if active
         if not user.get('is_active', True):
             return jsonify({'success': False, 'error': 'Account deactivated. Contact admin.'})
         
-        # Set session
         session['username'] = username
         session['role'] = user.get('role', 'user')
         
@@ -205,11 +196,10 @@ def approve_user():
     users = load_users()
     
     if username not in pending:
-        return jsonify({'success': False, 'error': 'User not found in pending list'})
+        return jsonify({'success': False, 'error': 'User not found'})
     
     user_data = pending[username]
     
-    # Move to users
     users[username] = {
         'password': user_data['password'],
         'email': user_data['email'],
@@ -225,7 +215,7 @@ def approve_user():
     save_users(users)
     save_pending(pending)
     
-    return jsonify({'success': True, 'message': f'User {username} approved successfully!'})
+    return jsonify({'success': True, 'message': f'User {username} approved!'})
 
 @app.route('/api/admin/reject_user', methods=['POST'])
 def reject_user():
@@ -271,7 +261,7 @@ def deactivate_user():
     action = data.get('action', 'deactivate')
     
     if username == 'REYTECHFX':
-        return jsonify({'success': False, 'error': 'Cannot modify admin account'})
+        return jsonify({'success': False, 'error': 'Cannot modify admin'})
     
     users = load_users()
     
@@ -286,4 +276,4 @@ def deactivate_user():
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(host='0.0.0.0', port=port, debug=False)
