@@ -68,7 +68,7 @@
             align-items: center;
         }
         
-        /* Logo Style 2 - Gold & Green Premium */
+        /* Logo */
         .logo {
             display: flex;
             align-items: center;
@@ -78,8 +78,8 @@
         .logo-icon {
             width: 45px;
             height: 45px;
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-            border-radius: 50%;
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -87,13 +87,13 @@
         
         .logo-icon i {
             color: white;
-            font-size: 20px;
+            font-size: 22px;
         }
         
         .logo-text {
             font-weight: 800;
             font-size: 24px;
-            background: linear-gradient(135deg, #f59e0b, #10b981);
+            background: linear-gradient(135deg, #10b981, #34d399);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -101,7 +101,7 @@
         
         .logo-sub {
             font-size: 10px;
-            color: #f59e0b;
+            color: #10b981;
         }
         
         .nav-links {
@@ -118,7 +118,7 @@
         }
         
         .nav-links a:hover {
-            color: #f59e0b;
+            color: #10b981;
         }
         
         .nav-btn {
@@ -165,7 +165,7 @@
         }
         
         .hero h1 .easy {
-            background: linear-gradient(135deg, #ffffff, #f59e0b);
+            background: linear-gradient(135deg, #ffffff, #10b981);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -231,7 +231,43 @@
             transform: translateY(-3px);
         }
         
-        /* Features Grid */
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: #10b981;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: #10b981;
+        }
+        
+        .stat-label {
+            color: #9ca3af;
+            margin-top: 10px;
+        }
+        
+        /* Features */
         .features {
             padding: 80px 20px;
             max-width: 1400px;
@@ -246,7 +282,7 @@
         }
         
         .section-title span {
-            background: linear-gradient(135deg, #f59e0b, #10b981);
+            background: linear-gradient(135deg, #10b981, #34d399);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -269,14 +305,14 @@
         
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: #f59e0b;
-            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.1);
+            border-color: #10b981;
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.1);
         }
         
         .feature-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #f59e0b, #d97706);
+            background: linear-gradient(135deg, #10b981, #059669);
             border-radius: 15px;
             display: flex;
             align-items: center;
@@ -288,6 +324,11 @@
         .feature-card h3 {
             font-size: 24px;
             margin-bottom: 15px;
+        }
+        
+        .feature-card p {
+            color: #9ca3af;
+            line-height: 1.6;
         }
         
         .feature-list {
@@ -334,7 +375,7 @@
         
         .pricing-card:hover {
             transform: translateY(-10px);
-            border-color: #f59e0b;
+            border-color: #10b981;
         }
         
         .pricing-card.popular {
@@ -366,6 +407,87 @@
             color: #9ca3af;
         }
         
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+        
+        .pricing-features li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        /* Download Section */
+        .download-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .download-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            padding: 20px 35px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            min-width: 300px;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-5px);
+            border-color: #10b981;
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+        }
+        
+        .download-icon {
+            font-size: 40px;
+        }
+        
+        .download-text h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #10b981;
+        }
+        
+        .download-text p {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        .download-info {
+            max-width: 600px;
+            margin: 40px auto 0;
+            text-align: left;
+            background: rgba(16, 185, 129, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+        }
+        
+        .download-info ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .download-info li {
+            margin: 8px 0;
+            color: #9ca3af;
+        }
+        
         /* Footer */
         .footer {
             background: #0a0a0a;
@@ -384,7 +506,7 @@
         .footer-section h4 {
             font-size: 18px;
             margin-bottom: 20px;
-            color: #f59e0b;
+            color: #10b981;
         }
         
         .footer-section p {
@@ -392,39 +514,43 @@
             line-height: 1.6;
         }
         
+        .footer-section a {
+            color: #9ca3af;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: #10b981;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: #10b981;
+            transform: translateY(-3px);
+        }
+        
         .creator {
             text-align: center;
             margin-top: 40px;
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #f59e0b;
-            font-size: 14px;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 15px 20px;
-            }
-            .nav-links {
-                display: none;
-            }
-            .hero h1 {
-                font-size: 40px;
-            }
-            .section-title {
-                font-size: 32px;
-            }
-            .pricing-card.popular {
-                transform: scale(1);
-            }
-            .logo-text {
-                font-size: 18px;
-            }
-            .logo-icon {
-                width: 35px;
-                height: 35px;
-            }
+            color: #10b981;
         }
         
         /* Scroll to top */
@@ -451,6 +577,33 @@
             visibility: visible;
         }
         
+        .scroll-top:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 40px;
+            }
+            .section-title {
+                font-size: 32px;
+            }
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+            .download-btn {
+                min-width: 250px;
+                padding: 15px 25px;
+            }
+        }
+        
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -462,6 +615,10 @@
                 transform: translateY(0);
             }
         }
+        
+        .feature-card, .pricing-card, .stat-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
     </style>
 </head>
 <body>
@@ -470,14 +627,13 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <!-- YOUR LOGO HERE - EASY TOOL by briana -->
             <div class="logo">
                 <div class="logo-icon">
-                    <i class="fas fa-key"></i>
+                    <i class="fas fa-unlock-alt"></i>
                 </div>
                 <div>
                     <div class="logo-text">EASY TOOL</div>
-                    <div class="logo-sub">by briana | v0.02</div>
+                    <div class="logo-sub">by REYTECHFX | v0.02</div>
                 </div>
             </div>
             <div class="nav-links">
@@ -495,7 +651,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-badge">
-                <i class="fas fa-bolt"></i> Professional MDM Bypass Tool by briana
+                <i class="fas fa-bolt"></i> Professional MDM Bypass Tool by REYTECHFX
             </div>
             <h1>
                 <span class="easy">EASY</span>
@@ -504,10 +660,30 @@
             <p>Professional MDM Bypass Tool for Samsung, Tecno, Infinix, Itel, Neon Ray and more.<br>Remove enterprise locks in minutes.</p>
             <div class="hero-buttons">
                 <a href="#download" class="btn-primary"><i class="fas fa-download"></i> Download Now</a>
-                <a href="#features" class="btn-secondary"><i class="fas fa-play"></i> Watch Demo</a>
+                <a href="#pricing" class="btn-secondary"><i class="fas fa-shopping-cart"></i> Buy License</a>
             </div>
         </div>
     </section>
+    
+    <!-- Stats Section -->
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number">50K+</div>
+            <div class="stat-label">Devices Unlocked</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Success Rate</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Support Available</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">6+</div>
+            <div class="stat-label">Bypass Methods</div>
+        </div>
+    </div>
     
     <!-- Features Section -->
     <section id="features" class="features">
@@ -562,7 +738,7 @@
             <div class="pricing-card">
                 <h3>Basic</h3>
                 <div class="price">$20<span>/3 Months</span></div>
-                <ul class="pricing-features" style="list-style: none; margin: 30px 0;">
+                <ul class="pricing-features">
                     <li><i class="fas fa-check" style="color:#10b981;"></i> Samsung MDM Bypass</li>
                     <li><i class="fas fa-check" style="color:#10b981;"></i> Basic Support</li>
                     <li><i class="fas fa-check" style="color:#10b981;"></i> 3 Months License</li>
@@ -574,7 +750,7 @@
                 <div class="popular-badge">Most Popular</div>
                 <h3>Professional</h3>
                 <div class="price">$30<span>/6 Months</span></div>
-                <ul class="pricing-features" style="list-style: none; margin: 30px 0;">
+                <ul class="pricing-features">
                     <li><i class="fas fa-check" style="color:#10b981;"></i> All Features</li>
                     <li><i class="fas fa-check" style="color:#10b981;"></i> Priority Support</li>
                     <li><i class="fas fa-check" style="color:#10b981;"></i> 6 Months License</li>
@@ -586,7 +762,7 @@
             <div class="pricing-card">
                 <h3>Enterprise</h3>
                 <div class="price">$40<span>/12 Months</span></div>
-                <ul class="pricing-features" style="list-style: none; margin: 30px 0;">
+                <ul class="pricing-features">
                     <li><i class="fas fa-check" style="color:#10b981;"></i> All Features</li>
                     <li><i class="fas fa-check" style="color:#10b981;"></i> 24/7 Priority Support</li>
                     <li><i class="fas fa-check" style="color:#10b981;"></i> 12 Months License</li>
@@ -600,13 +776,49 @@
     </section>
     
     <!-- Download Section -->
-    <section id="download" class="features">
+    <section id="download" class="download-section">
         <h2 class="section-title">Download <span>EASY TOOL</span></h2>
-        <p style="text-align: center; color: #9ca3af; margin-bottom: 40px;">Available for Windows, Linux, and macOS</p>
-        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-            <a href="#" class="btn-primary" onclick="downloadFile('windows')"><i class="fab fa-windows"></i> Download for Windows</a>
-            <a href="#" class="btn-primary" onclick="downloadFile('linux')"><i class="fab fa-linux"></i> Download for Linux</a>
-            <a href="#" class="btn-primary" onclick="downloadFile('mac')"><i class="fab fa-apple"></i> Download for macOS</a>
+        <p style="color: #9ca3af; margin-bottom: 20px;">Choose your preferred download source</p>
+        
+        <div class="download-buttons">
+            <!-- Google Drive Button -->
+            <a href="https://drive.google.com/file/d/1eTr4KgGBL2XtExTucR0pZhMGMuSiYL22/view?usp=drive_link" 
+               class="download-btn" 
+               target="_blank">
+                <div class="download-icon"><i class="fab fa-google-drive"></i></div>
+                <div class="download-text">
+                    <h4>Google Drive</h4>
+                    <p>Version 0.02 | Fast Download</p>
+                </div>
+            </a>
+            
+            <!-- MediaFire Button -->
+            <a href="https://www.mediafire.com/file/inikqfv4fd8m5k9/EASY_TOOL_Setup_v0.02.rar/file" 
+               class="download-btn" 
+               target="_blank">
+                <div class="download-icon"><i class="fas fa-cloud-download-alt"></i></div>
+                <div class="download-text">
+                    <h4>MediaFire</h4>
+                    <p>Version 0.02 | Alternative Link</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="download-info">
+            <p style="color: #f59e0b; margin-bottom: 10px;"><i class="fas fa-info-circle"></i> <strong>Installation Instructions:</strong></p>
+            <ol>
+                <li>Download the RAR file from the link above</li>
+                <li>Extract using WinRAR or 7-Zip</li>
+                <li>Run <strong>EASY_TOOL_Setup_v0.02.exe</strong> as Administrator</li>
+                <li>Follow the installation wizard</li>
+                <li>Launch EASY TOOL from desktop shortcut</li>
+            </ol>
+            <p style="color: #ef4444; margin-top: 15px; font-size: 12px;">
+                <i class="fas fa-shield-alt"></i> <strong>Note:</strong> Windows Defender may flag the tool - This is a false positive. Add to exceptions or disable temporarily.
+            </p>
+            <p style="color: #10b981; margin-top: 10px; font-size: 12px;">
+                <i class="fas fa-key"></i> <strong>Password:</strong> easytool (if prompted)
+            </p>
         </div>
     </section>
     
@@ -615,29 +827,36 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>EASY TOOL</h4>
-                <p>Professional MDM Bypass Tool for Android devices. Created by briana.</p>
+                <p>Professional MDM Bypass Tool for Android devices. Created by REYTECHFX.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/reytechfx" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://youtube.com/@easytoolteam" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://t.me/reytechfx" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="https://wa.me/254111457171" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
-                <p><a href="#home" style="color: #9ca3af; text-decoration: none;">Home</a></p>
-                <p><a href="#features" style="color: #9ca3af; text-decoration: none;">Features</a></p>
-                <p><a href="#pricing" style="color: #9ca3af; text-decoration: none;">Pricing</a></p>
-                <p><a href="#download" style="color: #9ca3af; text-decoration: none;">Download</a></p>
+                <p><a href="#home">Home</a></p>
+                <p><a href="#features">Features</a></p>
+                <p><a href="#pricing">Pricing</a></p>
+                <p><a href="#download">Download</a></p>
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
-                <p><i class="fas fa-phone"></i> 254111457171</p>
-                <p><i class="fas fa-envelope"></i> reytechfix@gmail.com</p>
-                <p><i class="fab fa-whatsapp"></i> 254111457171</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:254111457171">254111457171</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:reytechfix@gmail.com">reytechfix@gmail.com</a></p>
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/254111457171">254111457171</a></p>
             </div>
             <div class="footer-section">
                 <h4>Payment Methods</h4>
                 <p><i class="fas fa-money-bill-wave"></i> M-Pesa: 0111457171</p>
                 <p><i class="fas fa-globe"></i> SendWave: 0117219996</p>
+                <p><i class="fab fa-cc-visa"></i> Visa/MasterCard</p>
             </div>
         </div>
         <div class="creator">
-            <p>Created with <i class="fas fa-heart" style="color: #f59e0b;"></i> by briana | © 2025 EASY TOOL</p>
+            <p>Created with <i class="fas fa-heart" style="color: #10b981;"></i> by <strong>REYTECHFX</strong> | © 2025 EASY TOOL | All Rights Reserved</p>
         </div>
     </footer>
     
@@ -649,26 +868,41 @@
     <!-- Login Modal -->
     <div id="loginModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; justify-content: center; align-items: center;">
         <div style="background: #1e293b; padding: 40px; border-radius: 20px; width: 400px; max-width: 90%;">
-            <h2 style="color: #f59e0b; margin-bottom: 20px;">Login to EASY TOOL</h2>
+            <h2 style="color: #10b981; margin-bottom: 20px; text-align: center;">Login to EASY TOOL</h2>
             <input type="text" id="loginUsername" placeholder="Username" style="width: 100%; padding: 12px; margin: 10px 0; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: white;">
             <input type="password" id="loginPassword" placeholder="Password" style="width: 100%; padding: 12px; margin: 10px 0; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: white;">
             <button onclick="doLogin()" style="width: 100%; padding: 12px; background: #10b981; border: none; border-radius: 8px; color: white; font-weight: bold; cursor: pointer;">Login</button>
             <button onclick="hideLoginModal()" style="width: 100%; padding: 12px; margin-top: 10px; background: #ef4444; border: none; border-radius: 8px; color: white; cursor: pointer;">Cancel</button>
             <div id="loginError" style="color: #ef4444; margin-top: 10px; text-align: center;"></div>
+            <p style="text-align: center; margin-top: 15px; font-size: 12px; color: #9ca3af;">
+                <a href="#" onclick="showForgotPassword()" style="color: #10b981;">Forgot Password?</a>
+            </p>
         </div>
     </div>
     
     <!-- Payment Modal -->
     <div id="paymentModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; justify-content: center; align-items: center;">
         <div style="background: #1e293b; padding: 40px; border-radius: 20px; width: 500px; max-width: 90%;">
-            <h2 style="color: #f59e0b; margin-bottom: 20px;">Payment Instructions</h2>
+            <h2 style="color: #f59e0b; margin-bottom: 20px;">💳 Payment Instructions</h2>
             <div id="paymentContent"></div>
             <button onclick="hidePaymentModal()" style="width: 100%; padding: 12px; margin-top: 20px; background: #ef4444; border: none; border-radius: 8px; color: white; cursor: pointer;">Close</button>
         </div>
     </div>
     
+    <!-- Forgot Password Modal -->
+    <div id="forgotModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; justify-content: center; align-items: center;">
+        <div style="background: #1e293b; padding: 40px; border-radius: 20px; width: 450px; max-width: 90%;">
+            <h2 style="color: #10b981; margin-bottom: 20px;">🔐 Reset Password</h2>
+            <p style="color: #9ca3af; margin-bottom: 20px; font-size: 14px;">Enter your email address to receive reset instructions.</p>
+            <input type="email" id="resetEmail" placeholder="Your Email Address" style="width: 100%; padding: 12px; margin: 10px 0; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: white;">
+            <button onclick="sendResetLink()" style="width: 100%; padding: 12px; background: #10b981; border: none; border-radius: 8px; color: white; font-weight: bold; cursor: pointer;">Send Reset Link</button>
+            <button onclick="hideForgotModal()" style="width: 100%; padding: 12px; margin-top: 10px; background: #ef4444; border: none; border-radius: 8px; color: white; cursor: pointer;">Cancel</button>
+            <div id="resetMessage" style="color: #10b981; margin-top: 10px; text-align: center; font-size: 12px;"></div>
+        </div>
+    </div>
+    
     <script>
-        // Smooth scroll
+        // Smooth scroll for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -708,6 +942,7 @@
         
         function hideLoginModal() {
             document.getElementById('loginModal').style.display = 'none';
+            document.getElementById('loginError').innerText = '';
         }
         
         async function doLogin() {
@@ -719,23 +954,36 @@
                 return;
             }
             
-            try {
-                const response = await fetch('/api/login', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ username, password })
-                });
-                const data = await response.json();
-                
-                if (data.success) {
-                    alert('Login successful! Welcome ' + username);
-                    hideLoginModal();
-                } else {
-                    document.getElementById('loginError').innerText = data.error || 'Invalid credentials';
-                }
-            } catch (error) {
-                document.getElementById('loginError').innerText = 'Login failed. Try again.';
+            // Demo login - In real implementation, this would call your API
+            if (username === 'REYTECHFX' && password === 'valentina241') {
+                alert('Login successful! Welcome ' + username);
+                hideLoginModal();
+            } else {
+                document.getElementById('loginError').innerText = 'Invalid credentials. Contact 254111457171 for license.';
             }
+        }
+        
+        // Forgot password
+        function showForgotPassword() {
+            hideLoginModal();
+            document.getElementById('forgotModal').style.display = 'flex';
+        }
+        
+        function hideForgotModal() {
+            document.getElementById('forgotModal').style.display = 'none';
+            document.getElementById('resetMessage').innerText = '';
+        }
+        
+        function sendResetLink() {
+            const email = document.getElementById('resetEmail').value;
+            if (!email) {
+                document.getElementById('resetMessage').innerText = 'Please enter your email address';
+                document.getElementById('resetMessage').style.color = '#ef4444';
+                return;
+            }
+            document.getElementById('resetMessage').innerText = 'Reset link sent to ' + email + '. Check your inbox.';
+            document.getElementById('resetMessage').style.color = '#10b981';
+            setTimeout(() => hideForgotModal(), 3000);
         }
         
         // Payment functions
@@ -749,9 +997,9 @@
                         <li><strong>M-Pesa:</strong> 0111457171</li>
                         <li><strong>SendWave:</strong> 0117219996</li>
                     </ul>
-                    <p>After payment, send transaction ID to 254111457171 for activation.</p>
+                    <p>After payment, send transaction ID to <strong>254111457171</strong> for activation.</p>
                     <div style="background: #0f172a; padding: 10px; border-radius: 8px; margin-top: 15px;">
-                        <p>Reference: ET + Your Phone Number</p>
+                        <p>Reference: <strong>ET + Your Phone Number</strong></p>
                     </div>
                 `;
             } else if (plan === 'pro') {
@@ -762,9 +1010,9 @@
                         <li><strong>M-Pesa:</strong> 0111457171</li>
                         <li><strong>SendWave:</strong> 0117219996</li>
                     </ul>
-                    <p>After payment, send transaction ID to 254111457171 for activation.</p>
+                    <p>After payment, send transaction ID to <strong>254111457171</strong> for activation.</p>
                     <div style="background: #0f172a; padding: 10px; border-radius: 8px; margin-top: 15px;">
-                        <p>Reference: ET + Your Phone Number</p>
+                        <p>Reference: <strong>ET + Your Phone Number</strong></p>
                     </div>
                 `;
             } else {
@@ -775,9 +1023,9 @@
                         <li><strong>M-Pesa:</strong> 0111457171</li>
                         <li><strong>SendWave:</strong> 0117219996</li>
                     </ul>
-                    <p>After payment, send transaction ID to 254111457171 for activation.</p>
+                    <p>After payment, send transaction ID to <strong>254111457171</strong> for activation.</p>
                     <div style="background: #0f172a; padding: 10px; border-radius: 8px; margin-top: 15px;">
-                        <p>Reference: ET + Your Phone Number</p>
+                        <p>Reference: <strong>ET + Your Phone Number</strong></p>
                     </div>
                 `;
             }
@@ -789,9 +1037,27 @@
             document.getElementById('paymentModal').style.display = 'none';
         }
         
-        function downloadFile(os) {
-            alert(`Downloading EASY TOOL for ${os}...\n\nContact 254111457171 for the latest download link.`);
-        }
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.feature-card, .pricing-card, .stat-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
