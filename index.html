@@ -123,6 +123,7 @@
             padding: 10px 25px;
             border-radius: 50px;
             font-weight: 600;
+            cursor: pointer;
         }
         
         .hero {
@@ -814,6 +815,9 @@
                 <input type="password" id="loginPassword" placeholder="Password" style="width: 100%; padding: 12px; margin: 10px 0; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: white;">
                 <button onclick="doLogin()" style="width: 100%; padding: 12px; background: #10b981; border: none; border-radius: 8px; color: white; font-weight: bold; cursor: pointer;">Login</button>
                 <div id="loginError" style="color: #ef4444; margin-top: 10px; text-align: center;"></div>
+                <p style="text-align: center; margin-top: 15px; font-size: 12px; color: #9ca3af;">
+                    Demo Admin: <strong style="color:#10b981;">REYTECHFX / valentina241</strong>
+                </p>
             </div>
             
             <div id="registerForm" style="display: none;">
@@ -944,12 +948,14 @@
             }
             
             try {
+                console.log('Attempting login for:', username);
                 const response = await fetch('/api/login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ username, password })
                 });
                 const data = await response.json();
+                console.log('Login response:', data);
                 
                 if (data.success) {
                     alert(data.message);
@@ -962,11 +968,13 @@
                         loadPendingUsers();
                         loadAllUsers();
                     }
+                    location.reload();
                 } else {
                     document.getElementById('loginError').innerText = data.error;
                 }
             } catch (error) {
-                document.getElementById('loginError').innerText = 'Login failed. Try again.';
+                console.error('Login error:', error);
+                document.getElementById('loginError').innerText = 'Login failed. Check console for details.';
             }
         }
         
@@ -1015,7 +1023,7 @@
                 const data = await response.json();
                 
                 if (data.success && data.users.length > 0) {
-                    let html = '<table><thead><tr><th>Username</th><th>Email</th><th>Registered</th><th>Actions</th></tr></thead><tbody>';
+                    let html = '</td><thead><tr><th>Username</th><th>Email</th><th>Registered</th><th>Actions</th></tr></thead><tbody>';
                     data.users.forEach(user => {
                         html += `<tr>
                             <td>${user.username}</td>
