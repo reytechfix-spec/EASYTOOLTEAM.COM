@@ -345,7 +345,6 @@
             color: #9ca3af;
         }
         
-        /* Download Section - Without Links */
         .download-section {
             padding: 80px 20px;
             text-align: center;
@@ -366,10 +365,6 @@
         .contact-info a {
             color: #10b981;
             text-decoration: none;
-        }
-        
-        .contact-info a:hover {
-            text-decoration: underline;
         }
         
         .download-info {
@@ -414,15 +409,6 @@
         .footer-section p {
             color: #9ca3af;
             line-height: 1.6;
-        }
-        
-        .footer-section a {
-            color: #9ca3af;
-            text-decoration: none;
-        }
-        
-        .footer-section a:hover {
-            color: #10b981;
         }
         
         .social-links {
@@ -478,7 +464,6 @@
             visibility: visible;
         }
         
-        /* Admin Panel Styles */
         .admin-panel {
             display: none;
             background: rgba(30, 41, 59, 0.8);
@@ -579,11 +564,6 @@
             color: white;
         }
         
-        .status-pending {
-            background: #f59e0b;
-            color: #0a0a0a;
-        }
-        
         .status-inactive {
             background: #ef4444;
             color: white;
@@ -604,12 +584,6 @@
             }
             .pricing-card.popular {
                 transform: scale(1);
-            }
-            .users-table {
-                font-size: 12px;
-            }
-            .users-table th, .users-table td {
-                padding: 8px;
             }
         }
     </style>
@@ -745,7 +719,6 @@
         </div>
     </section>
     
-    <!-- Download Section - Without Links (Contact Admin Only) -->
     <section id="download" class="download-section">
         <h2 class="section-title">Get <span>EASY TOOL</span></h2>
         <p style="color: #9ca3af; margin-bottom: 30px;">Contact admin to get the tool after payment</p>
@@ -772,7 +745,6 @@
             </p>
         </div>
         
-        <!-- Admin Panel (Only visible to admin) -->
         <div id="adminPanel" class="admin-panel">
             <h3 style="color: #f59e0b; margin-bottom: 20px;"><i class="fas fa-crown"></i> Admin Dashboard</h3>
             <div class="admin-tabs">
@@ -829,7 +801,6 @@
         <i class="fas fa-arrow-up"></i>
     </div>
     
-    <!-- Login/Register Modal -->
     <div id="loginModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 2000; justify-content: center; align-items: center;">
         <div style="background: #1e293b; padding: 40px; border-radius: 20px; width: 500px; max-width: 90%;">
             <div style="display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 1px solid #334155;">
@@ -862,7 +833,6 @@
         </div>
     </div>
     
-    <!-- Payment Modal -->
     <div id="paymentModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 2000; justify-content: center; align-items: center;">
         <div style="background: #1e293b; padding: 40px; border-radius: 20px; width: 500px; max-width: 90%;">
             <h2 style="color: #f59e0b; margin-bottom: 20px;">💳 Payment Instructions</h2>
@@ -872,7 +842,7 @@
     </div>
     
     <script>
-        // ==================== NAVIGATION ====================
+        // Navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -897,9 +867,7 @@
         
         function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
         
-        // ==================== AUTHENTICATION ====================
-        let currentUserRole = null;
-        
+        // Authentication
         function switchAuthTab(tab) {
             const loginForm = document.getElementById('loginForm');
             const registerForm = document.getElementById('registerForm');
@@ -985,7 +953,6 @@
                 
                 if (data.success) {
                     alert(data.message);
-                    currentUserRole = data.role;
                     hideLoginModal();
                     document.getElementById('userInfo').innerHTML = `<span style="color:#10b981;"><i class="fas fa-user"></i> ${data.username}</span>`;
                     document.getElementById('logoutBtn').style.display = 'inline-block';
@@ -1022,7 +989,7 @@
             }
         }
         
-        // ==================== ADMIN FUNCTIONS ====================
+        // Admin Functions
         function switchAdminTab(tab) {
             const pendingPanel = document.getElementById('pendingUsersPanel');
             const allPanel = document.getElementById('allUsersPanel');
@@ -1060,7 +1027,7 @@
                             </td>
                         </tr>`;
                     });
-                    html += '</tbody><tr>';
+                    html += '</tbody></table>';
                     document.getElementById('pendingUsersPanel').innerHTML = html;
                 } else {
                     document.getElementById('pendingUsersPanel').innerHTML = '<p style="text-align:center; color:#9ca3af;"><i class="fas fa-inbox"></i> No pending approvals</p>';
@@ -1133,8 +1100,7 @@
         }
         
         async function toggleUserStatus(username, action) {
-            const actionText = action === 'activate' ? 'activate' : 'deactivate';
-            if (confirm(`${actionText.charAt(0).toUpperCase() + actionText.slice(1)} user ${username}?`)) {
+            if (confirm(`${action === 'activate' ? 'Activate' : 'Deactivate'} user ${username}?`)) {
                 const response = await fetch('/api/admin/deactivate_user', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -1146,7 +1112,7 @@
             }
         }
         
-        // ==================== MODAL FUNCTIONS ====================
+        // Modal Functions
         function showLoginModal() { document.getElementById('loginModal').style.display = 'flex'; }
         function hideLoginModal() { document.getElementById('loginModal').style.display = 'none'; }
         
@@ -1155,10 +1121,7 @@
             if (plan === 'basic') {
                 content = `<h3>Basic Plan - $20 (3 Months)</h3>
                     <p>Send payment via:</p>
-                    <ul style="margin: 20px 0;">
-                        <li><strong>M-Pesa:</strong> 0111457171</li>
-                        <li><strong>SendWave:</strong> 0117219996</li>
-                    </ul>
+                    <ul><li><strong>M-Pesa:</strong> 0111457171</li><li><strong>SendWave:</strong> 0117219996</li></ul>
                     <p>After payment, send transaction ID to <strong>254111457171</strong> for activation.</p>
                     <div style="background:#0f172a;padding:10px;border-radius:8px;margin-top:15px;">
                         <p>Reference: <strong>ET + Your Phone Number</strong></p>
@@ -1166,10 +1129,7 @@
             } else if (plan === 'pro') {
                 content = `<h3>Professional Plan - $30 (6 Months)</h3>
                     <p>Send payment via:</p>
-                    <ul style="margin: 20px 0;">
-                        <li><strong>M-Pesa:</strong> 0111457171</li>
-                        <li><strong>SendWave:</strong> 0117219996</li>
-                    </ul>
+                    <ul><li><strong>M-Pesa:</strong> 0111457171</li><li><strong>SendWave:</strong> 0117219996</li></ul>
                     <p>After payment, send transaction ID to <strong>254111457171</strong> for activation.</p>
                     <div style="background:#0f172a;padding:10px;border-radius:8px;margin-top:15px;">
                         <p>Reference: <strong>ET + Your Phone Number</strong></p>
@@ -1177,10 +1137,7 @@
             } else {
                 content = `<h3>Enterprise Plan - $40 (12 Months)</h3>
                     <p>Send payment via:</p>
-                    <ul style="margin: 20px 0;">
-                        <li><strong>M-Pesa:</strong> 0111457171</li>
-                        <li><strong>SendWave:</strong> 0117219996</li>
-                    </ul>
+                    <ul><li><strong>M-Pesa:</strong> 0111457171</li><li><strong>SendWave:</strong> 0117219996</li></ul>
                     <p>After payment, send transaction ID to <strong>254111457171</strong> for activation.</p>
                     <div style="background:#0f172a;padding:10px;border-radius:8px;margin-top:15px;">
                         <p>Reference: <strong>ET + Your Phone Number</strong></p>
@@ -1192,7 +1149,6 @@
         
         function hidePaymentModal() { document.getElementById('paymentModal').style.display = 'none'; }
         
-        // Check session on load
         checkSession();
     </script>
 </body>
